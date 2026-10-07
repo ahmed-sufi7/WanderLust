@@ -25,15 +25,29 @@ app.get("/", (req, res) => {
   res.send("I'm root!");
 });
 
+//Index route
 app.get("/listings", async (req, res) => {
   let allListings = await Listing.find({});
   res.render("listings/index.ejs", { allListings });
 });
 
+//New route
+app.get("/listings/new", (req, res) => {
+  res.render("listings/new.ejs");
+});
+
+//Show route
 app.get("/listings/:id", async (req, res) => {
   let { id } = req.params;
   let listing = await Listing.findById(id);
   res.render("listings/show.ejs", { listing });
+});
+
+//Create route
+app.post("/listings", async (req, res) => {
+  const newListing = new Listing(req.body.listing);
+  await newListing.save();
+  res.redirect("/listings");
 });
 
 // app.get("/testlisting", async (req, res) => {
