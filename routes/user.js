@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/user.js");
 const wrapAsync = require("../utils/wrapAsync.js");
 const passport = require("passport");
+const { saveRedirectUrl } = require("../middleware.js");
 
 router.get("/signup", (req, res) => {
   res.render("users/signup.ejs");
@@ -36,13 +37,15 @@ router.get("/login", (req, res) => {
 
 router.post(
   "/login",
+  saveRedirectUrl,
   passport.authenticate("local", {
     failureRedirect: "/login",
     failureFlash: true,
   }),
   async (req, res) => {
     req.flash("success", "Welcome back to wanderlust!");
-    res.redirect("/listings");
+    let redirectUrl = res.locals.redirectUrl || "/listings";  //if the user logs in from the /listings page, in this case we are not checking if the user is .isLoggedIn . so to redirect to /listings page we are using this lines logic
+    res.redirect(redirectUrl);
   },
 );
 
