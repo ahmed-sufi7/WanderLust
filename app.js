@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -63,7 +67,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req, res, next) => {
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
-  res.locals.currUser = req.user;             // TO BE USED IN EJS AS WE CANT ACCESS req.user directly in ejs
+  res.locals.currUser = req.user; // TO BE USED IN EJS AS WE CANT ACCESS req.user directly in ejs
   next();
 });
 
