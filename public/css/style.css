@@ -23,7 +23,7 @@ body {
     color: #222222 !important;
 }
 
-.f-info-links a{
+.f-info-links a {
     text-decoration: none;
     color: #222222;
 }
@@ -32,7 +32,9 @@ body {
     text-decoration: underline;
 }
 
-.f-info-links, .f-info-socials, .f-info-brand {
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -60,17 +62,17 @@ body {
     margin-bottom: 2rem;
 }
 
-.card-img-top{
+.card-img-top {
     border-radius: 1rem !important;
     width: 100% !important;
     object-fit: cover;
 }
 
-.card-body{
+.card-body {
     padding: 0 !important;
 }
 
-.card-text{
+.card-text {
     font-weight: 400 !important;
 }
 
@@ -83,30 +85,30 @@ body {
     opacity: 0;
 }
 
-.card-img-overlay:hover{
+.card-img-overlay:hover {
     opacity: 0.2;
     background-color: white;
 }
 
 
 /* New Page */
-.add-btn{
+.add-btn {
     background-color: #fe424d !important;
     border: none !important;
 }
 
 /* Edit Page  */
-.edit-btn{
+.edit-btn {
     background-color: #fe424d !important;
     border: none !important;
 }
 
 /* Show page  */
-.show-img{
+.show-img {
     height: 30vh;
 }
 
-.btns{
+.btns {
     display: flex;
 }
 
@@ -119,4 +121,66 @@ body {
 #map {
     height: 400px;
     width: 80vh;
+}
+
+
+/* Search */
+.search-btn {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0px 1rem 0px 1rem;
+}
+
+.search-btn:hover {
+    background-color: #fe424d;
+    color: #fff;
+}
+
+.search-btn i {
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+.search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+}
+
+
+/* filters */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+}
+
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.filter p {
+    font-size: 0.8rem;
+}
+
+.tax-info {
+    display: none;
+}
+
+.tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 3.25rem;
+    padding: 1rem;
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
 }
